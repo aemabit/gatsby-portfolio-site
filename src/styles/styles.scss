@@ -154,6 +154,10 @@ header {
           align-items: center;
           position: relative;
           top: 200px;
+          @media (max-width: 478px) {
+            flex-direction: column;
+            top: 100px
+           }
           nav {
             display: block;
             ul {
@@ -168,6 +172,11 @@ header {
                 overflow: hidden;
                 position: relative;
                 width: 700px;
+                @media (max-width: 478px) {
+                  font-size: 3rem;
+                  height: 80px;
+                  width: 300px;
+                 }
                 a {
                   position: absolute;
                   color: $white;
@@ -239,7 +248,7 @@ header {
     height: 60vh;
   }
   @media (max-width: 478px) {
-    height: 75vh;
+    height: 70vh;
   }
   .row {
     position: relative;
@@ -262,8 +271,8 @@ header {
         letter-spacing: 36px;
       }
       @media (max-width: 478px) {
-        font-size: 3rem;
-        letter-spacing: 36px;
+        font-size: 2.2rem;
+        letter-spacing: 28px;
       }
     }
     .main-image {
@@ -271,14 +280,17 @@ header {
       width: 536px;
       margin: 0 auto;
       @media (max-width: 1440px) {
-        width: 436px;
+        width: 28%;
+      }
+      @media (max-width: 478px) {
+        width: 38%;
       }
     }
     .side-image {
       width: 260px;
       position: absolute;
       @media (max-width: 1440px) {
-        width: 208px;
+        width: 18%;
       }
       &.left {
         opacity: 0;
@@ -337,6 +349,9 @@ header {
     justify-content: space-around;
     align-items: center;
     width: 100%;
+    @media (max-width: 478px) {
+      flex-direction: column;
+    }
     .content {
       width: 33%;
       @media (max-width: 1440px) {
@@ -348,6 +363,9 @@ header {
       @media (max-width: 768px) {
         width: 50%;
         padding-left: 10px;
+      }
+      @media (max-width: 478px) {
+        width: 70%;
       }
       h3 {
         font-weight: 700;
@@ -441,6 +459,9 @@ header {
       width: 300px;
       height: 240px;
     }
+    @media (max-width: 478px) {
+      display: none;
+    }
     &.overlay {
       z-index: 7;
       background: $red;
@@ -474,8 +495,15 @@ header {
         padding: 0 40px;
         margin: 40px 0 60px;
       }
+      @media (max-width: 478px) {
+        align-items: center;
+        flex-direction: column;
+      }
       .title {
         width: 50%;
+        @media (max-width: 478px) {
+          width: 70%;
+        }
         h3 {
           font-weight: 700;
           text-transform: uppercase;
@@ -486,6 +514,10 @@ header {
       }
       .content {
         width: 50%;
+        @media (max-width: 478px) {
+         width: 70%;
+         margin-top: 20px;
+        }
         p {
           font-size: 1rem;
           line-height: 2rem;
@@ -504,6 +536,9 @@ footer {
     height: 200px;
     display: flex;
     align-items: center;
+    @media (max-width: 478px) {
+      height: 350px;
+     }
     .container {
       ul {
         display: flex;
@@ -511,10 +546,18 @@ footer {
         padding: 0;
         align-items: center;
         flex-direction: row;
+        @media (max-width: 478px) {
+         flex-direction: column;
+         }
         li {
           text-align: center;
           img {
             width: 50%;
+            @media (max-width: 478px) {
+              // height: 30px;
+              width: 30%;
+              margin-top: 30px;
+             }
           }
         }
       }
@@ -529,6 +572,9 @@ footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
+      @media (max-width: 478px) {
+        padding: 0 20px;
+       }
       .socials {
         a {
           margin: 0 8px;

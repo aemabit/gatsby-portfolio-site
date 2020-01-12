@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react"
-import { Link } from "gatsby"
 import gsap from "gsap"
 
 // MEDIA
@@ -11,11 +10,23 @@ import goldtree from "../images/goldtree.png"
 import me from "../images/MejiaAndres.jpg"
 
 const projects = [
-  { name: "mars", image: mars, link:"https://mars.aemabit.com/" },
-  { name: "aemabit", image: aemabit, link:"https://aemabit.com/" },
-  { name: "greenlink", image: greenlink , link:"https://thegreenlink.herokuapp.com/"},
-  { name: "starwars", image: starwars, link:"https://github.com/aemabit/Swapi-project" },
-  { name: "goldtree", image: goldtree , link:"https://github.com/aemabit/MERN-Stack-Next.js"},
+  { name: "mars", image: mars, link: "https://mars.aemabit.com/" },
+  { name: "aemabit", image: aemabit, link: "https://aemabit.com/" },
+  {
+    name: "greenlink",
+    image: greenlink,
+    link: "https://thegreenlink.herokuapp.com/",
+  },
+  {
+    name: "starwars",
+    image: starwars,
+    link: "https://github.com/aemabit/Swapi-project",
+  },
+  {
+    name: "goldtree",
+    image: goldtree,
+    link: "https://github.com/aemabit/MERN-Stack-Next.js",
+  },
 ]
 
 const Hamburger = ({ status }) => {
@@ -156,12 +167,10 @@ const Hamburger = ({ status }) => {
             <div className="menu-links">
               <nav>
                 <ul>
-                  <li
-                    ref={el => (line1 = el)}
-                    onMouseEnter={e => handleHover(e)}
-                    onMouseOut={e => handleHoverExit(e)}
-                  >
+                  <li ref={el => (line1 = el)}>
                     <a
+                      onMouseEnter={e => handleHover(e)}
+                      onMouseLeave={e => handleHoverExit(e)}
                       href="https://github.com/aemabit"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -169,12 +178,10 @@ const Hamburger = ({ status }) => {
                       Github
                     </a>
                   </li>
-                  <li
-                    ref={el => (line2 = el)}
-                    onMouseEnter={e => handleHover(e)}
-                    onMouseOut={e => handleHoverExit(e)}
-                  >
+                  <li ref={el => (line2 = el)}>
                     <a
+                      onMouseEnter={e => handleHover(e)}
+                      onMouseLeave={e => handleHoverExit(e)}
                       href="https://www.linkedin.com/in/andres-mejias/"
                       target="_blank"
                       rel="noopener noreferrer"
@@ -182,33 +189,35 @@ const Hamburger = ({ status }) => {
                       Linkedin
                     </a>
                   </li>
-                  <li
-                    ref={el => (line3 = el)}
-                    onMouseEnter={e => handleHover(e)}
-                    onMouseOut={e => handleHoverExit(e)}
-                  >
-                    <Link
-                      to="/https://www.instagram.com/aemabit/?hl=es"
+                  <li ref={el => (line3 = el)}>
+                    <a
+                      onMouseEnter={e => handleHover(e)}
+                      onMouseLeave={e => handleHoverExit(e)}
+                      href="https://www.instagram.com/aemabit/?hl=es"
                       target="_blank"
                       rel="noopener noreferrer"
                     >
                       Instagram
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </nav>
               <div ref={el => (info = el)} className="info">
-                  <img src={me} alt=""></img>
+                <img src={me} alt=""></img>
               </div>
               <div className="locations">
                 Projects:
                 {projects.map(el => (
-                  <span
-                    key={el.name}
-                    onMouseEnter={() => handleProject(el.image)}
-                    onMouseOut={handleProjectReturn}
-                  >
-                    <a href={el.link}>{el.name}</a>
+                  <span key={el.name}>
+                    <a
+                      onMouseEnter={() => handleProject(el.image)}
+                      onMouseLeave={handleProjectReturn}
+                      href={el.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {el.name}
+                    </a>
                   </span>
                 ))}
               </div>
